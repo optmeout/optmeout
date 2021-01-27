@@ -1,0 +1,47 @@
+var data = "";
+$(document).ready(function(){
+    var url = "https://raw.githubusercontent.com/optmeout/optmeout/main/data.json";
+    $.ajax({
+        url: url,
+        method: "GET",
+        success: function(item){
+            data = JSON.parse(`${item}`);
+        },
+        error: function(){
+            // error function goes here
+        }
+    });
+
+    $('#txt-search').keyup(function(){
+        var searchField = $(this).val();
+        if(searchField === '')  {
+            $('#filter-records').html('');
+            return;
+        }       
+        var regex = new RegExp(searchField, "i");
+        var output = '<div class="row">';
+        var count = 1;
+        $.each(data, function(key, val){
+            if (val.name.search(regex) != -1) {
+                output += '<div class="col-md-6 well">';
+                output += '<div class="col-md-7">';
+                output += '<h5>' + val.name + '</h5>';
+                output += '<a href="' + val.url[0] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[0] + '</a>';
+                if (val.url.length == 2) {
+                  output += '<br><a href="' + val.url[1] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[1] + '</a>';
+                } else if (val.url.length == 3) {
+                  output += '<br><a href="' + val.url[1] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[1] + '</a>';
+                  output += '<br><a href="' + val.url[2] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[2] + '</a>';
+                }
+                output += '</div>';
+                output += '</div>';
+                if(count%2 == 0){
+                    output += '</div><div class="row">'
+                }
+                count++;
+            }
+        });
+        output += '</div>';
+        $('#filter-records').html(output);
+    });
+});
