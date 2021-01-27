@@ -7,3 +7,6 @@ A directory of direct links to opt out from online services
 3.  Commit your changes (git commit -am 'Add some feature')
 4.  Push to the branch (git push origin my-new-feature)
 5.  Create a new pull request
+
+## Licence
+[MIT](https://github.com/optmeout/optmeout/blob/main/LICENSE)
