@@ -1,6 +1,8 @@
 # optmeout
 A directory of direct links to opt out from online services
 
+[Visit OptMeOut](https://optmeout.github.io/optmeout/)
+
 ## Contributing
 1.  Fork it (https://github.com/optmeout/optmeout/fork)
 2.  Create your feature branch (git checkout -b my-new-feature)
