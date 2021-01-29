@@ -26,7 +26,7 @@ $(document).ready(function(){
             if (val.name.search(regex) != -1) {
                 output += '<div class="col-md-6 well">';
                 output += '<div class="col-md-7">';
-                output += '<h5>' + val.name + '</h5>';
+                output += '<a href="' + val.domain[0] + '" rel="noreferrer noopener nofollow" target="_blank"><h5>' + val.name + '</h5></a>';
                 output += '<a href="' + val.url[0] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[0] + '</a>';
                 if (val.url.length == 2) {
                   output += '<br><a href="' + val.url[1] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[1] + '</a>';
