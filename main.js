@@ -27,11 +27,8 @@ $(document).ready(function(){
                 output += '<div class="col-md-7">';
                 output += '<a href="http://' + val.domain[0] + '" rel="noreferrer noopener nofollow" target="_blank" style="color:#000;"><h5>' + val.name + '</h5></a>';
                 output += '<a href="' + val.url[0] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[0] + '</a>';
-                if (val.url.length == 2) {
-                  output += '<br><a href="' + val.url[1] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[1] + '</a>';
-                } else if (val.url.length == 3) {
-                  output += '<br><a href="' + val.url[1] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[1] + '</a>';
-                  output += '<br><a href="' + val.url[2] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[2] + '</a>';
+                for (let i = 1; i < val.url.length; i++) {
+					output += '<br><a href="' + val.url[i] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[i] + '</a>';
                 }
                 output += '</div>';
                 output += '</div>';
