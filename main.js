@@ -1,5 +1,4 @@
 var data = "";
-var notfound = 0;
 $(document).ready(function(){
     var url = "https://raw.githubusercontent.com/optmeout/optmeout/main/data.json";
     $.ajax({
@@ -40,12 +39,9 @@ $(document).ready(function(){
                     output += '</div><div class="row">';
                 }
                 count++;
-                notfound = 0;
-            } else {
-            	notfound = 1;
             }
         });
-        if (notfound == 1) {
+        if (JSON.stringify(data).search(regex) == -1) {
         	output += "<div align=\"center\">Can't find what you're looking for? <a href=\"https://github.com/optmeout/optmeout\">Help make OptMeOut better</a>.</div>";
         }
         output += '</div>';
