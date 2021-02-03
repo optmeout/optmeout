@@ -17,7 +17,29 @@ $(document).ready(function(){
         if(searchField === '')  {
             $('#filter-records').html('');
             return;
-        }       
+        }
+	if(searchField === '*')  {
+            var output = '<div class="row">';
+            var count = 1;
+            $.each(data, function(key, val){
+                output += '<div class="col-md-6 well">';
+                output += '<div class="col-md-7">';
+                output += '<a href="http://' + val.domain[0] + '" rel="noreferrer noopener nofollow" target="_blank" style="color:#000;"><h5>' + val.name + '</h5></a>';
+                output += '<a href="' + val.url[0] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[0] + '</a>';
+                for (let i = 1; i < val.url.length; i++) {
+                    output += '<br><a href="' + val.url[i] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[i] + '</a>';
+                }
+                output += '</div>';
+                output += '</div>';
+                if(count%2 == 0){
+                    output += '</div><div class="row">';
+                }
+                count++;
+            });
+            output += '</div>';
+        	$('#filter-records').html(output);
+            return;
+        }
         var regex = new RegExp(searchField, "i");
         var output = '<div class="row">';
         var count = 1;
@@ -28,7 +50,7 @@ $(document).ready(function(){
                 output += '<a href="http://' + val.domain[0] + '" rel="noreferrer noopener nofollow" target="_blank" style="color:#000;"><h5>' + val.name + '</h5></a>';
                 output += '<a href="' + val.url[0] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[0] + '</a>';
                 for (let i = 1; i < val.url.length; i++) {
-			output += '<br><a href="' + val.url[i] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[i] + '</a>';
+		    output += '<br><a href="' + val.url[i] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[i] + '</a>';
                 }
                 output += '</div>';
                 output += '</div>';
