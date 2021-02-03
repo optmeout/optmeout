@@ -29,6 +29,9 @@ $(document).ready(function(){
                 for (let i = 1; i < val.url.length; i++) {
                     output += '<br><a href="' + val.url[i] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[i] + '</a>';
                 }
+		for (let y = 0; y < (3 - val.url.length); y++){
+                    output += '<br><a>​</a>';
+                }
                 output += '</div>';
                 output += '</div>';
                 if(count%2 == 0){
@@ -51,6 +54,9 @@ $(document).ready(function(){
                 output += '<a href="' + val.url[0] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[0] + '</a>';
                 for (let i = 1; i < val.url.length; i++) {
 		    output += '<br><a href="' + val.url[i] + '" rel="noreferrer noopener nofollow" target="_blank">' + val.url[i] + '</a>';
+                }
+		for (let y = 0; y < (3 - val.url.length); y++){
+                    output += '<br><a>​</a>';
                 }
                 output += '</div>';
                 output += '</div>';
