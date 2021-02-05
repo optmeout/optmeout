@@ -11,7 +11,7 @@ $(document).ready(function(){
             // error function goes here
         }
     });
-    $.fn.getdata = function() {
+    $('#txt-search').keyup(function() {
         var searchField = $(this).val();
         if(searchField === '')  {
             $('#filter-records').html('');
@@ -81,13 +81,5 @@ $(document).ready(function(){
         }
         output += '</div>';
         $('#filter-records').html(output);
-    }
-    $('#txt-search').keyup(getdata());
-    var urlraw = window.location.href;
-    var newurlraw = new URL(urlraw);
-    var qparamvalue = newurlraw.searchParams.get("q");
-    if (qparamvalue != null && qparamvalue != "") {
-	$('#txt-search').val(qparamvalue);
-	$.fn.getdata();
-    }
+    });
 });
