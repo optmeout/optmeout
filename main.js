@@ -6,6 +6,8 @@ $(document).ready(function(){
         method: "GET",
         success: function(item){
             data = JSON.parse(`${item}`);
+	    $('#txt-search').removeAttr("readonly");
+	    $('#txt-search').focus();
         },
         error: function(){
             // error function goes here
