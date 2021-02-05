@@ -18,7 +18,11 @@ $(document).ready(function(){
             $('#filter-records').html('');
             return;
         }
-	if(searchField === '*')  {
+	if(searchField.search("_") != -1)  {
+            $('#filter-records').html('');
+            return;
+        }
+	if(searchField.substr(0, 1) == '*')  {
             var output = '<div class="row">';
             var count = 1;
             $.each(data, function(key, val){
@@ -66,7 +70,11 @@ $(document).ready(function(){
                 count++;
             }
         });
-        if (JSON.stringify(data).search(regex) == -1) {
+	var object = "";
+	for (i = 0; i < data.length; i++) {
+	object += data[i].name + "_"
+	}
+        if (object.search(regex) == -1) {
         	output += "<div align=\"center\">Can't find what you're looking for? <a href=\"https://github.com/optmeout/optmeout\">Help make OptMeOut better</a>.</div>";
         }
         output += '</div>';
