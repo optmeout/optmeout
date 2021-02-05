@@ -19,7 +19,10 @@ $(document).ready(function(){
             return;
         }
 	if(searchField.search("_") != -1)  {
-            $('#filter-records').html('');
+	    var output = '<div class="row">';
+	    output += "<div align=\"center\">Can't find what you're looking for? <a href=\"https://github.com/optmeout/optmeout\">Help make OptMeOut better</a>.</div>";
+            output += '</div>';
+            $('#filter-records').html(output);
             return;
         }
 	if(searchField.substr(0, 1) == '*')  {
@@ -44,7 +47,7 @@ $(document).ready(function(){
                 count++;
             });
             output += '</div>';
-        	$('#filter-records').html(output);
+            $('#filter-records').html(output);
             return;
         }
         var regex = new RegExp(searchField, "i");
