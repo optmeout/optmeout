@@ -11,7 +11,7 @@ $(document).ready(function(){
             // error function goes here
         }
     });
-    function getdata() {
+    $.fn.getdata = function() {
         var searchField = $(this).val();
         if(searchField === '')  {
             $('#filter-records').html('');
@@ -88,6 +88,6 @@ $(document).ready(function(){
     var qparamvalue = newurlraw.searchParams.get("q");
     if (qparamvalue != null && qparamvalue != "") {
 	$('#txt-search').val(qparamvalue);
-	getdata();
+	$.fn.getdata();
     }
 });
