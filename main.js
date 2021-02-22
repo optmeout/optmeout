@@ -1,4 +1,5 @@
 var data = "";
+document.querySelector("form").onsubmit = function(e){e.preventDefault();}
 $(document).ready(function(){
     var url = "https://raw.githubusercontent.com/optmeout/optmeout/main/data.json";
     $.ajax({
