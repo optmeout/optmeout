@@ -1,3 +1,13 @@
+/*
+* main.js
+* https://github.com/optmeout/optmeout/blob/main/main.js
+* https://optmeout.github.io/optmeout/main.js
+* 
+* By Nimityx, https://github.com/Nimityx
+*
+* License : https://github.com/optmeout/optmeout/blob/main/LICENSE (MIT)
+* source  : https://github.com/optmeout/optmeout
+*/
 var data = "";
 document.querySelector("form").onsubmit = function(e){e.preventDefault();}
 $(document).ready(function(){
