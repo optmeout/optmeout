@@ -9,6 +9,7 @@
 * source  : https://github.com/optmeout/optmeout
 */
 var data = "";
+var query = "";
 document.querySelector("form").onsubmit = function(e){e.preventDefault();}
 var urlraw = new URL(window.location.href);
 var query = urlraw.searchParams.get("q");
@@ -110,7 +111,7 @@ $(document).ready(function(){
     });
     $('#txt-search').keyup(function() {
         var searchField = $(this).val();
-	permalink.href = window.location.href + "&q=" + searchField;
+	permalink.href = window.location.href + "?q=" + searchField;
         permalink.onclick = function(e){
             e.preventDefault();
             copyText(permalink.href);
