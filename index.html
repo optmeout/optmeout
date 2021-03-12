@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/style.css">
   <script src="assets/jquery-3.3.1.min.js"></script>
   <script src="assets/bootstrap.min.js"></script>
   <title>Opt Me Out | A directory of direct links to opt out from online services</title>
@@ -17,9 +18,13 @@
   <a href="https://github.com/optmeout/optmeout" class="btn btn-primary" rel="noreferrer noopener nofollow" target="_blank">Contribute on GitHub</a>
   </div><hr>
 	<form role="form">
-	<p>Search  (enter * for all entries)</p>
+	<div class="flex-justify">
+		<h5 align="left"><a id="permalink" href="" title="Click to copy">Permalink</a></h5>
+		<h5 align="right" style="padding-right:0;">(enter * for all <span id="entries"></span> entries)</h5>
+	</div>
         <div class="form-group">
             <input type="input" class="form-control input-lg" id="txt-search" placeholder="Type the online service you want to opt out" readonly>
+	    <h3 id="results" align="center"></h3>
         </div>
 	</form>
 	<div id="filter-records"></div>
