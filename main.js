@@ -128,6 +128,7 @@ $(document).ready(function(){
 	    output += "<div align=\"center\">Can't find what you're looking for? <a href=\"https://github.com/optmeout/optmeout\">Help make OptMeOut better</a>.</div>";
             output += '</div>';
             $('#filter-records').html(output);
+	    $('#results').html("0 results");
             return;
         }
 	if(searchField.slice(0,1) == '*')  {
@@ -153,6 +154,7 @@ $(document).ready(function(){
             });
             output += '</div>';
             $('#filter-records').html(output);
+	    $('#results').html(count - 1 + " results");
             return;
         }
         var regex = new RegExp(searchField, "i");
@@ -187,5 +189,6 @@ $(document).ready(function(){
         }
         output += '</div>';
         $('#filter-records').html(output);
+	$('#results').html(count - 1 + " results");
     });
 });
