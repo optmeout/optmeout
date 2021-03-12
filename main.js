@@ -12,6 +12,17 @@ var data = "";
 document.querySelector("form").onsubmit = function(e){e.preventDefault();}
 var urlraw = new URL(window.location.href);
 var query = urlraw.searchParams.get("q");
+function copyText(a) {
+    var b = document.createElement('textarea');
+    c = document.getSelection();
+    b.textContent = a;
+    document.body.appendChild(b);
+    c.removeAllRanges();
+    b.select();
+    document.execCommand('copy');
+    c.removeAllRanges();
+    document.body.removeChild(b);
+}
 var permalink = document.querySelector("#permalink");
 permalink.href = window.location.href;
 permalink.onclick = function(e){
