@@ -13,6 +13,7 @@ var query = "";
 document.querySelector("form").onsubmit = function(e){e.preventDefault();}
 var urlraw = new URL(window.location.href);
 var query = urlraw.searchParams.get("q");
+var home = "https://optmeout.github.io/optmeout/"
 function copyText(a) {
     var b = document.createElement('textarea');
     c = document.getSelection();
@@ -111,7 +112,7 @@ $(document).ready(function(){
     });
     $('#txt-search').keyup(function() {
         var searchField = $(this).val();
-	permalink.href = window.location.href + "?q=" + searchField;
+	permalink.href = home + "?q=" + searchField;
         permalink.onclick = function(e){
             e.preventDefault();
             copyText(permalink.href);
